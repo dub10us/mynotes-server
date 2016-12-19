@@ -1,0 +1,33 @@
+{
+  "scripts": {
+    "start": "node src/app.js",
+    "watch": "nodemon src/app.js",
+    "test": "mocha ./test/**/*.test.js",
+    "db:fixtures": "node scripts/loadFixtures",
+    "db:schema:create": "node scripts/createSchema",
+    "db:schema:drop": "node scripts/dropSchema",
+    "db:schema:recreate": "npm run db:schema:drop && npm run db:schema:create && npm run db:fixtures",
+    "symlink": "ln -nsf ./../src/ node_modules/app",
+    "install": "npm run symlink"
+  },
+  "dependencies": {
+    "boom": "^4.2.0",
+    "ez-config": "^0.2.1",
+    "hapi": "^16.0.1",
+    "hapi-cors": "^1.0.1",
+    "joi": "^10.0.6",
+    "knex": "^0.12.6",
+    "moment": "^2.17.1",
+    "mysql": "^2.12.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0"
+  }
+}

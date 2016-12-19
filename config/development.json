@@ -1,0 +1,6 @@
+{
+    "accessKey": {
+        "keyLifetime": 60,
+        "refreshKeyLifetime": 300
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "httpServer": {
+        "port": 3001
+    },
+    "accessKey": {
+        "keyLifetime": 3600,
+        "refreshKeyLifetime": 604800
+    },
+    "database": {
+        "host" : "localhost",
+        "user" : "root",
+        "password": "",
+        "database": "mynotes",
+        "charset": "utf8"
+    }
+}
