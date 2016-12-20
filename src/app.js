@@ -30,6 +30,20 @@ server.route({
 });
 
 server.route({
+  method: 'POST',
+  path:'/accessKey/refresh',
+  handler: errorHandler(require('app/routeHandler/refreshAccessKey')(db)),
+  config: {
+    validate: {
+      payload: {
+        key: Joi.string().min(64).max(64).required(),
+        refreshKey: Joi.string().min(64).max(64).required()
+      }
+    }
+  }
+});
+
+server.route({
   method: 'GET',
   path:'/user/exists',
   handler: errorHandler(require('app/routeHandler/userExists')(db)),

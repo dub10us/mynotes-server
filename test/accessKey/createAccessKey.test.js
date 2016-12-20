@@ -1,16 +1,13 @@
-'use strict';
-
 const assert = require('chai').assert;
 const moment = require('moment');
 
-describe('Create new access key', function() {
-  it('Creates access key object with keys and expires dates set', function() {
+describe('Create new access key', () => {
+  it('Creates access key object with keys and expires dates set', () => {
 
     const createAccessKey = require('app/accessKey/createAccessKey')(10, 60);
 
     const now = moment();
-    return createAccessKey(123).then(accessKey => {
-      console.log(accessKey);
+    return createAccessKey(123).then((accessKey) => {
       assert.equal(
         accessKey.key.length,
         64,
@@ -27,7 +24,7 @@ describe('Create new access key', function() {
         'Key and refreshKey should be different'
       );
 
-    assert.equal(accessKey.userId, 123);
+      assert.equal(accessKey.userId, 123);
 
       let expectedExpiresAtFrom = now.clone().add(9, 'seconds');
       let expectedExpiresAtTo = now.clone().add(11, 'seconds');
@@ -50,6 +47,6 @@ describe('Create new access key', function() {
         moment(accessKey.refreshKeyExpiresAt).isSameOrBefore(expectedExpiresAtTo),
         'refreshKeyExpiresAt should be now + 60 seconds'
       );
-    })
+    });
   });
 });
