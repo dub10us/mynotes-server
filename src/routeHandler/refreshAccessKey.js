@@ -16,11 +16,12 @@ const refreshAccessKeyRouteHandler = db => (
         throw new Error('Not found');
       }
 
+      let newAccessKey;
       return refreshAccessKey(accessKey[0])
-      .then((newAccessKey) => {
-        saveAccessKey(db, newAccessKey);
-        return newAccessKey;
-      }).then((newAccessKey) => {
+      .then((refreshedKey) => {
+        newAccessKey = refreshedKey;
+        return saveAccessKey(db, refreshedKey);
+      }).then(() => {
         reply(newAccessKey);
       }).catch((err) => {
         if (err.message === 'The refreshKey is expired') {
