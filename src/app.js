@@ -45,7 +45,7 @@ server.route({
 
 server.route({
   method: 'GET',
-  path:'/user/exists',
+  path: '/user/exists',
   handler: errorHandler(require('app/routeHandler/userExists')(db)),
   config: {
     validate: {
@@ -58,23 +58,39 @@ server.route({
 
 server.route({
   method: 'GET',
-  path:'/boards',
+  path: '/boards',
   handler: errorHandler(require('app/routeHandler/boardList')(db)),
   config: {
     validate: {
       headers: Joi.object({
-        "x-auth-key": Joi.string().min(64).max(64).required()
+        'x-auth-key': Joi.string().min(64).max(64).required()
+      }).options({ allowUnknown: true })
+    }
+  }
+});
+
+server.route({
+  method: 'GET',
+  path: '/boards/{boardId}',
+  handler: errorHandler(require('app/routeHandler/board')(db)),
+  config: {
+    validate: {
+      params: {
+        boardId: Joi.number().min(1).required()
+      },
+      headers: Joi.object({
+        'x-auth-key': Joi.string().min(64).max(64).required()
       }).options({ allowUnknown: true })
     }
   }
 });
 
 server.register({
-	register: require('hapi-cors'),
-	options: {
+  register: require('hapi-cors'),
+  options: {
     headers: ['X-Auth-Key', 'Content-Type', 'Accept'],
-		origins: ['http://localhost:3000']
-	}
+    origins: ['http://localhost:3000']
+  }
 }).then(() => {
   // Start the server
   server.start((err) => {

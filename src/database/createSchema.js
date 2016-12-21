@@ -48,7 +48,6 @@ function createTables() {
     table.increments().unsigned();
     table.integer('boardId').unsigned().notNullable();
     table.foreign('boardId').references('boards.id');
-    table.string('name', 255).notNullable();
     table.float('x', 8, 4).notNullable();
     table.float('y', 8, 4).notNullable();
     table.float('z', 8, 4).notNullable();

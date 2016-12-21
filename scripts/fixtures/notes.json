@@ -1,0 +1,105 @@
+[{
+    "id": "35",
+    "x": "0.75799904932869",
+    "y": "0.39587326781057",
+    "z": "34",
+    "color": "#ff77c3",
+    "content": "List of users browsing board",
+    "boardId": "1"
+}, {
+    "id": "36",
+    "x": "0.46953320843601",
+    "y": "0.12856763163314",
+    "z": "23",
+    "color": "#4ac7f0",
+    "content": "User profile page\nPassword change",
+    "boardId": "1"
+}, {
+    "id": "38",
+    "x": "0.84035565064139",
+    "y": "0.12145276778535",
+    "z": "24",
+    "color": "#ff77c3",
+    "content": "Two way sync\nVersioning of boards\nIncremental updating and loading snapshot as well",
+    "boardId": "1"
+}, {
+    "id": "39",
+    "x": "0.11818094456449",
+    "y": "0.13173804295153",
+    "z": "17",
+    "color": "#56c656",
+    "content": "Deleting boards",
+    "boardId": "1"
+}, {
+    "id": "40",
+    "x": "0.30333525014376",
+    "y": "0.1283375237991",
+    "z": "18",
+    "color": "#56c656",
+    "content": "Renaming boards",
+    "boardId": "1"
+}, {
+    "id": "41",
+    "x": "0.21723204940971",
+    "y": "0.25968649553105",
+    "z": "19",
+    "color": "#56c656",
+    "content": "Make list of all boards more beautiful\nAdd boards thumbnails",
+    "boardId": "1"
+}, {
+    "id": "42",
+    "x": "0.060624957833353",
+    "y": "0.40140886818723",
+    "z": "20",
+    "color": "#ffe45c",
+    "content": "Website homepage",
+    "boardId": "1"
+}, {
+    "id": "43",
+    "x": "0.63798191791968",
+    "y": "0.60006687197644",
+    "z": "29",
+    "color": "#ffe45c",
+    "content": "Moar integration tests of API",
+    "boardId": "1"
+}, {
+    "id": "45",
+    "x": "0.39011743668363",
+    "y": "0.74767903645833",
+    "z": "33",
+    "color": "#ff887c",
+    "content": "Write unit tests to API testing library",
+    "boardId": "1"
+}, {
+    "id": "46",
+    "x": "0.079549056830494",
+    "y": "0.66738550350689",
+    "z": "35",
+    "color": "#ffe45c",
+    "content": "Some notes UX improvements:\n- note controls hidden behind header- moving notes in Z axis\n- one click to edit note\n- notes resizing\n- make note controls beautifuler",
+    "boardId": "1"
+}, {
+    "id": "47",
+    "x": "0.28291413121123",
+    "y": "0.46078276710388",
+    "z": "37",
+    "color": "#ffe45c",
+    "content": "Side menu issues\n- click outside to hide\n- add missing delete link",
+    "boardId": "1"
+}, {
+    "id": "48",
+    "x": "0.63093927698275",
+    "y": "0.39465478515625",
+    "z": "41",
+    "color": "#ff887c",
+    "content": "PoRefactor crap in JS code",
+    "boardId": "1"
+}, {
+    "id": "54",
+    "x": "0.89553594427154",
+    "y": "0.48487751628644",
+    "z": "40",
+    "color": "#ff77c3",
+    "content": "Fix missing changes bug",
+    "boardId": "1"
+}]
