@@ -1,7 +1,7 @@
 const validateAccessKey = require('app/accessKey/validateAccessKey');
 const findByBoardIdAndUserId = require('app/database/note/findByBoardIdAndUserId');
 
-function boardList(db) {
+function notes(db) {
   return (request, reply) => (
     validateAccessKey(db, request.headers['x-auth-key'])
       .then((userId) => {
@@ -14,13 +14,13 @@ function boardList(db) {
         const boardId = request.params.boardId;
         return findByBoardIdAndUserId(db, boardId, userId);
       })
-      .then((boards) => {
-        if (!boards.length) {
+      .then((boardNotes) => {
+        if (!boardNotes.length) {
           throw new Error('Not found');
         }
-        reply(boards);
+        reply(boardNotes);
       })
   );
 }
 
-module.exports = boardList;
+module.exports = notes;

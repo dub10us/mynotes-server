@@ -58,8 +58,8 @@ function createRoutes(server, db) {
 
   server.route({
     method: 'GET',
-    path: '/boards/{boardId}',
-    handler: errorHandler(require('app/routeHandler/board')(db)),
+    path: '/boards/{boardId}/notes',
+    handler: errorHandler(require('app/routeHandler/notes')(db)),
     config: {
       validate: {
         params: {
