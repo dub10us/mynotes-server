@@ -71,6 +71,29 @@ function createRoutes(server, db) {
       }
     }
   });
+
+  server.route({
+    method: 'PATCH',
+    path: '/notes/{id}',
+    handler: errorHandler(require('app/routeHandler/updateNote')(db)),
+    config: {
+      validate: {
+        params: {
+          id: Joi.number().min(1).required()
+        },
+        headers: Joi.object({
+          'x-auth-key': Joi.string().min(64).max(64).required()
+        }).options({ allowUnknown: true }),
+        payload: {
+          x: Joi.number().min(-0.1).max(1.1),
+          y: Joi.number().min(-0.1).max(1.1),
+          z: Joi.number().min(0).max(9999),
+          color: Joi.string().min(7).max(7),
+          content: Joi.string().min(1).max(4096)
+        }
+      }
+    }
+  });
 }
 
 module.exports = createRoutes;

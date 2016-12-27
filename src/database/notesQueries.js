@@ -12,12 +12,19 @@ function findByIdAndUserId(db, id, userId) {
     .andWhere('boards.userId', userId);
 }
 
-function save(db, noteData) {
+function create(db, noteData) {
   return db('notes').insert(noteData);
+}
+
+function update(db, id, noteData) {
+  return db('notes')
+    .where('id', id)
+    .update(noteData);
 }
 
 module.exports = {
   findByBoardIdAndUserId,
   findByIdAndUserId,
-  save
+  create,
+  update
 };

@@ -54,7 +54,7 @@ Promise.all(promises)
       promises = [];
       notes.forEach((note) => {
         promises.push(
-          notesQueries.save(connection, note)
+          notesQueries.create(connection, note)
         );
       });
 
