@@ -1,5 +1,5 @@
 const validateAccessKey = require('app/accessKey/validateAccessKey');
-const findByBoardIdAndUserId = require('app/database/note/findByBoardIdAndUserId');
+const notesQueries = require('app/database/notesQueries');
 
 function notes(db) {
   return (request, reply) => (
@@ -12,7 +12,7 @@ function notes(db) {
       })
       .then((userId) => {
         const boardId = request.params.boardId;
-        return findByBoardIdAndUserId(db, boardId, userId);
+        return notesQueries.findByBoardIdAndUserId(db, boardId, userId);
       })
       .then((boardNotes) => {
         if (!boardNotes.length) {
