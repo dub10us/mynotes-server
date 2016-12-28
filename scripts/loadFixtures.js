@@ -21,7 +21,7 @@ const users = [
 const boards = [
   {
     userId: 1,
-    name: 'Board 1',
+    name: 'Things to do',
   },
   {
     userId: 1,
