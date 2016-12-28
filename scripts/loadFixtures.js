@@ -25,7 +25,7 @@ const boards = [
   },
   {
     userId: 1,
-    name: 'Board 2',
+    name: 'Positioning test',
   },
 ];
 
