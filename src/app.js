@@ -30,6 +30,7 @@ server.register({
     if (err) {
       throw err;
     }
+    console.log('HTTP port env:', process.env.PORT);
     console.log('Server running at:', server.info.uri);
   });
 });
