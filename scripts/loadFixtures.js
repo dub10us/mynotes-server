@@ -1,7 +1,7 @@
 const createUser = require('app/user/createUser');
 const saveUser = require('app/database/user/saveUser');
-const saveBoard = require('app/database/board/saveBoard');
-const notesQueries = require('app/database/notesQueries');
+const boardQueries = require('app/database/queries/boardQueries');
+const notesQueries = require('app/database/queries/notesQueries');
 const db = require('app/database/connection');
 const notesFixtures = require('./fixtures/notes');
 
@@ -20,10 +20,12 @@ const users = [
 
 const boards = [
   {
+    id: 1,
     userId: 1,
     name: 'Things to do',
   },
   {
+    id: 2,
     userId: 1,
     name: 'Positioning test',
   },
@@ -43,7 +45,7 @@ Promise.all(promises)
       promises = [];
       boards.forEach((board) => {
         promises.push(
-          saveBoard(connection, board)
+          boardQueries.saveBoard(connection, board)
         );
       });
 

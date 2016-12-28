@@ -58,6 +58,22 @@ function createRoutes(server, db) {
 
   server.route({
     method: 'GET',
+    path: '/boards/{boardId}',
+    handler: errorHandler(require('app/routeHandler/board')(db)),
+    config: {
+      validate: {
+        params: {
+          boardId: Joi.number().min(1).required()
+        },
+        headers: Joi.object({
+          'x-auth-key': Joi.string().min(64).max(64).required()
+        }).options({ allowUnknown: true })
+      }
+    }
+  });
+
+  server.route({
+    method: 'GET',
     path: '/boards/{boardId}/notes',
     handler: errorHandler(require('app/routeHandler/notes')(db)),
     config: {

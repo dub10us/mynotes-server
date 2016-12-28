@@ -1,4 +1,4 @@
-const notesQueries = require('app/database/notesQueries');
+const notesQueries = require('app/database/queries/notesQueries');
 
 function prepareDataToUpdate(dataToUpdate) {
   const filtered = {};

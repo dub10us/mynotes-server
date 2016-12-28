@@ -1,5 +1,5 @@
 const validateAccessKey = require('app/accessKey/validateAccessKey');
-const notesQueries = require('app/database/notesQueries');
+const notesQueries = require('app/database/queries/notesQueries');
 
 function notes(db) {
   return (request, reply) => (
