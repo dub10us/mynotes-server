@@ -8,7 +8,7 @@
     "db:schema:drop": "node scripts/dropSchema",
     "db:schema:recreate": "npm run db:schema:drop && npm run db:schema:create && npm run db:fixtures",
     "symlink": "ln -nsf ./../src/ node_modules/app",
-    "install": "npm run symlink"
+    "postinstall": "npm run symlink"
   },
   "dependencies": {
     "boom": "^4.2.0",
