@@ -92,7 +92,7 @@
     "y": "0.39465478515625",
     "z": "41",
     "color": "#ff887c",
-    "content": "PoRefactor crap in JS code",
+    "content": "Refactor crap in JS code",
     "boardId": "1"
 }, {
     "id": "54",
@@ -102,4 +102,44 @@
     "color": "#ff77c3",
     "content": "Fix missing changes bug",
     "boardId": "1"
+}, {
+    "id": "55",
+    "x": "0.5",
+    "y": "0.5",
+    "z": "1",
+    "color": "#ff77c3",
+    "content": "Middle note",
+    "boardId": "2"
+}, {
+    "id": "56",
+    "x": "0.0",
+    "y": "0.0",
+    "z": "1",
+    "color": "#ff77c3",
+    "content": "Top left note",
+    "boardId": "2"
+}, {
+    "id": "57",
+    "x": "1.0",
+    "y": "1.0",
+    "z": "1",
+    "color": "#ff77c3",
+    "content": "Bottom right note",
+    "boardId": "2"
+}, {
+    "id": "58",
+    "x": "1.0",
+    "y": "0.0",
+    "z": "1",
+    "color": "#ff77c3",
+    "content": "Top right note",
+    "boardId": "2"
+}, {
+    "id": "59",
+    "x": "0.0",
+    "y": "1.0",
+    "z": "1",
+    "color": "#ff77c3",
+    "content": "Bottom left note",
+    "boardId": "2"
 }]
