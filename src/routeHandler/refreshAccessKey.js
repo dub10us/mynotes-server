@@ -1,4 +1,4 @@
-const config = require('ez-config');
+const config = require('config');
 const findByKeyAndRefreshKey = require('app/database/accessKey/findByKeyAndRefreshKey');
 
 const refreshAccessKey = require('app/accessKey/refreshAccessKey')(

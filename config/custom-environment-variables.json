@@ -1,4 +1,7 @@
 {
+  "httpServer": {
+      "port": "PORT"
+  },
   "database": {
     "host" : "DATABASE_HOST",
     "user" : "DATABASE_USER",

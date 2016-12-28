@@ -1,4 +1,4 @@
-const config = require('ez-config');
+const config = require('config');
 const db = require('app/database/connection');
 
 /**

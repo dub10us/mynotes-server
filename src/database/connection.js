@@ -1,6 +1,6 @@
 
 
-const config = require('ez-config');
+const config = require('config');
 
 let db = null;
 

@@ -2,7 +2,7 @@
 
 const Hapi = require('hapi');
 const hapiCors = require('hapi-cors');
-const config = require('ez-config');
+const config = require('config');
 const dbConnection = require('app/database/connection');
 const createRoutes = require('app/routing/createRoutes');
 

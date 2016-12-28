@@ -1,4 +1,4 @@
-const config = require('ez-config');
+const config = require('config');
 const findByEmailAndPassword = require('app/database/user/findByEmailAndPassword');
 const createAccessKey = require('app/accessKey/createAccessKey')(
     config.get('accessKey.keyLifetime'),
