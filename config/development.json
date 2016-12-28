@@ -1,6 +1,9 @@
 {
-    "accessKey": {
-        "keyLifetime": 60,
-        "refreshKeyLifetime": 3600
-    }
+  "httpServer": {
+      "host": "localhost"
+  },
+  "accessKey": {
+    "keyLifetime": 60,
+    "refreshKeyLifetime": 3600
+  }
 }
