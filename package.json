@@ -7,9 +7,8 @@
     "db:schema:create": "node scripts/createSchema",
     "db:schema:drop": "node scripts/dropSchema",
     "db:schema:recreate": "npm run db:schema:drop && npm run db:schema:create && npm run db:fixtures",
-    "symlink": "ln -nsf ./../src/ node_modules/app",
-    "postinstall": "npm run symlink",
-    "heroku-postbuild": "mkdir node_modules/app && cp -R src/ node_modules/app"
+    "symlink": "ln -nsf ../src/ node_modules/app",
+    "postinstall": "npm run symlink"
   },
   "dependencies": {
     "boom": "^4.2.0",
