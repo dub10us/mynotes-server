@@ -3,6 +3,11 @@
         "port": 3001,
         "host": "0.0.0.0"
     },
+    "cors": {
+        "methods": ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
+        "headers": ["X-Auth-Key", "Content-Type", "Accept"],
+        "origins": ["http://localhost:3000"]
+    },
     "accessKey": {
         "keyLifetime": 3600,
         "refreshKeyLifetime": 604800

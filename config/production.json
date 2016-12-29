@@ -1,1 +1,5 @@
-{}
+{
+  "cors": {
+      "origins": ["https://talkrz.github.io"]
+  }
+}

@@ -19,11 +19,7 @@ createRoutes(server, db);
 
 server.register({
   register: hapiCors,
-  options: {
-    methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
-    headers: ['X-Auth-Key', 'Content-Type', 'Accept'],
-    origins: ['http://localhost:3000']
-  }
+  options: config.get('cors')
 }).then(() => {
   // Start the server
   server.start((err) => {
