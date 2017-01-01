@@ -18,7 +18,7 @@ function createRoutes(server, db) {
 
   server.route({
     method: 'POST',
-    path:'/accessKey/refresh',
+    path: '/accessKey/refresh',
     handler: errorHandler(require('app/routeHandler/refreshAccessKey')(db)),
     config: {
       validate: {
@@ -106,6 +106,28 @@ function createRoutes(server, db) {
           z: Joi.number().min(0).max(9999),
           color: Joi.string().min(7).max(7),
           content: Joi.string().min(1).max(4096)
+        }
+      }
+    }
+  });
+
+  server.route({
+    method: 'POST',
+    path: '/boards/{boardId}/notes',
+    handler: errorHandler(require('app/routeHandler/createNote')(db)),
+    config: {
+      validate: {
+        params: {
+          boardId: Joi.number().min(1).required()
+        },
+        headers: Joi.object({
+          'x-auth-key': Joi.string().min(64).max(64).required()
+        }).options({ allowUnknown: true }),
+        payload: {
+          x: Joi.number().min(-0.1).max(1.1).required(),
+          y: Joi.number().min(-0.1).max(1.1).required(),
+          z: Joi.number().min(0).max(9999).required(),
+          color: Joi.string().min(7).max(7).required()
         }
       }
     }
