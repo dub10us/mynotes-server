@@ -24,9 +24,16 @@ function update(db, id, noteData) {
     .update(noteData);
 }
 
+function remove(db, id) {
+  return db('notes')
+    .where('id', id)
+    .delete();
+}
+
 module.exports = {
   findByBoardIdAndUserId,
   findByIdAndUserId,
   create,
-  update
+  update,
+  remove,
 };

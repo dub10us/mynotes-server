@@ -132,6 +132,22 @@ function createRoutes(server, db) {
       }
     }
   });
+
+  server.route({
+    method: 'DELETE',
+    path: '/notes/{id}',
+    handler: errorHandler(require('app/routeHandler/deleteNote')(db)),
+    config: {
+      validate: {
+        params: {
+          id: Joi.number().min(1).required()
+        },
+        headers: Joi.object({
+          'x-auth-key': Joi.string().min(64).max(64).required()
+        }).options({ allowUnknown: true })
+      }
+    }
+  });
 }
 
 module.exports = createRoutes;
