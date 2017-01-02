@@ -100,13 +100,13 @@ function createRoutes(server, db) {
         headers: Joi.object({
           'x-auth-key': Joi.string().min(64).max(64).required()
         }).options({ allowUnknown: true }),
-        payload: {
+        payload: Joi.object({
           x: Joi.number().min(-0.1).max(1.1),
           y: Joi.number().min(-0.1).max(1.1),
           z: Joi.number().min(0).max(9999),
           color: Joi.string().min(7).max(7),
-          content: Joi.string().min(1).max(4096)
-        }
+          content: Joi.string().max(4096).optional().allow('')
+        })
       }
     }
   });
