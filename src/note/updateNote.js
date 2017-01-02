@@ -9,6 +9,11 @@ function updateNote(db, userId, id, dataToUpdate) {
       }
 
       const data = filterInputData(dataToUpdate);
+
+      if (!Object.keys(data).length) {
+        return Promise.resolve();
+      }
+
       return notesQueries.update(db, id, data);
     })
     .then(() => notesQueries.findByIdAndUserId(db, id, userId))
