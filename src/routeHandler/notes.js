@@ -15,9 +15,6 @@ function notes(db) {
         return notesQueries.findByBoardIdAndUserId(db, boardId, userId);
       })
       .then((boardNotes) => {
-        if (!boardNotes.length) {
-          throw new Error('Not found');
-        }
         reply(boardNotes);
       })
   );
