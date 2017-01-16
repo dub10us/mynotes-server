@@ -5,5 +5,5 @@ stack (react, redux etc.) and make an useful thing as a side effect.
 
 This repo contains server-side code.
 
-Look at the [a link](https://github.com/talkrz/mynotes) repository for more
+Look at the [main repository](https://github.com/talkrz/mynotes) for more
 details and the application demo.
