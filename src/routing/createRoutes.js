@@ -73,6 +73,25 @@ function createRoutes(server, db) {
   });
 
   server.route({
+    method: 'PATCH',
+    path: '/boards/{boardId}',
+    handler: errorHandler(require('app/routeHandler/boardUpdate')(db)),
+    config: {
+      validate: {
+        params: {
+          boardId: Joi.number().min(1).required()
+        },
+        headers: Joi.object({
+          'x-auth-key': Joi.string().min(64).max(64).required()
+        }).options({ allowUnknown: true }),
+        payload: Joi.object({
+          name: Joi.string().min(1).max(64),
+        })
+      }
+    }
+  });
+
+  server.route({
     method: 'GET',
     path: '/boards/{boardId}/notes',
     handler: errorHandler(require('app/routeHandler/notes')(db)),

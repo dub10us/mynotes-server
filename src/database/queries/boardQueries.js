@@ -10,8 +10,15 @@ function saveBoard(db, boardData) {
   return db('boards').insert(boardData);
 }
 
+function update(db, id, boardData) {
+  return db('boards')
+    .where('id', id)
+    .update(boardData);
+}
+
 module.exports = {
   findByUserId,
   findByIdAndUserId,
-  saveBoard
+  saveBoard,
+  update
 };
