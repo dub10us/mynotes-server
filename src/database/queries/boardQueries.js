@@ -21,10 +21,17 @@ function update(db, id, boardData) {
     .update(boardData);
 }
 
+function remove(db, id) {
+  return db('boards')
+    .where('id', id)
+    .delete();
+}
+
 module.exports = {
   findByUserId,
   findByIdAndUserId,
   saveBoard,
   create,
-  update
+  update,
+  remove
 };
