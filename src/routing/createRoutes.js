@@ -57,6 +57,22 @@ function createRoutes(server, db) {
   });
 
   server.route({
+    method: 'POST',
+    path: '/boards',
+    handler: errorHandler(require('app/routeHandler/boardCreate')(db)),
+    config: {
+      validate: {
+        headers: Joi.object({
+          'x-auth-key': Joi.string().min(64).max(64).required()
+        }).options({ allowUnknown: true }),
+        payload: Joi.object({
+          name: Joi.string().min(1).max(32)
+        })
+      }
+    }
+  });
+
+  server.route({
     method: 'GET',
     path: '/boards/{boardId}',
     handler: errorHandler(require('app/routeHandler/board')(db)),
