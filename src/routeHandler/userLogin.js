@@ -4,7 +4,7 @@ const createAccessKey = require('app/accessKey/createAccessKey')(
     config.get('accessKey.keyLifetime'),
     config.get('accessKey.refreshKeyLifetime')
 );
-const saveAccessKey = require('app/database/accessKey/saveAccessKey');
+const accessKeyQueries = require('app/database/queries/accessKeyQueries');
 
 function userLogin(db) {
   return (request, reply) => {
@@ -19,7 +19,7 @@ function userLogin(db) {
       let accessKey = null;
       return createAccessKey(user.id).then((accessKeyData) => {
         accessKey = accessKeyData;
-        return saveAccessKey(db, accessKey);
+        return accessKeyQueries.create(db, accessKey);
       }).then(() => {
         reply(accessKey);
       });

@@ -1,8 +1,8 @@
 const moment = require('moment');
-const findByKey = require('app/database/accessKey/findByKey');
+const accessKeyQueries = require('app/database/queries/accessKeyQueries');
 
 function validateAccessKey(db, accessKey) {
-  return findByKey(db, accessKey).then((accessKeys) => {
+  return accessKeyQueries.findByKey(db, accessKey).then((accessKeys) => {
     if (!accessKeys.length) {
       return false;
     }

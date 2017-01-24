@@ -1,17 +1,16 @@
 const config = require('config');
-const findByKeyAndRefreshKey = require('app/database/accessKey/findByKeyAndRefreshKey');
+const accessKeyQueries = require('app/database/queries/accessKeyQueries');
 
 const refreshAccessKey = require('app/accessKey/refreshAccessKey')(
     config.get('accessKey.keyLifetime')
 );
-const saveAccessKey = require('app/database/accessKey/saveAccessKey');
 
 const refreshAccessKeyRouteHandler = db => (
   (request, reply) => {
     const key = request.payload.key;
     const refreshKey = request.payload.refreshKey;
 
-    return findByKeyAndRefreshKey(db, key, refreshKey).then((accessKey) => {
+    return accessKeyQueries.findByKeyAndRefreshKey(db, key, refreshKey).then((accessKey) => {
       if (!accessKey.length || !accessKey[0].key) {
         throw new Error('Not found');
       }
@@ -20,7 +19,7 @@ const refreshAccessKeyRouteHandler = db => (
       return refreshAccessKey(accessKey[0])
       .then((refreshedKey) => {
         newAccessKey = refreshedKey;
-        return saveAccessKey(db, refreshedKey);
+        return accessKeyQueries.create(db, refreshedKey);
       }).then(() => {
         reply(newAccessKey);
       }).catch((err) => {
