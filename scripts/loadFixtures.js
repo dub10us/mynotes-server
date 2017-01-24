@@ -1,5 +1,5 @@
 const createUser = require('app/user/createUser');
-const saveUser = require('app/database/user/saveUser');
+const userQueries = require('app/database/queries/userQueries');
 const boardQueries = require('app/database/queries/boardQueries');
 const notesQueries = require('app/database/queries/notesQueries');
 const db = require('app/database/connection');
@@ -36,7 +36,7 @@ const connection = db.connect();
 let promises = [];
 users.forEach((user) => {
   promises.push(
-    saveUser(connection, createUser(user))
+    userQueries.create(connection, createUser(user))
   );
 });
 

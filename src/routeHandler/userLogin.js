@@ -1,5 +1,5 @@
 const config = require('config');
-const findByEmailAndPassword = require('app/database/user/findByEmailAndPassword');
+const userQueries = require('app/database/queries/userQueries');
 const createAccessKey = require('app/accessKey/createAccessKey')(
     config.get('accessKey.keyLifetime'),
     config.get('accessKey.refreshKeyLifetime')
@@ -11,7 +11,7 @@ function userLogin(db) {
     const email = request.payload.email;
     const password = request.payload.password;
 
-    return findByEmailAndPassword(db, email, password).then((user) => {
+    return userQueries.findByEmailAndPassword(db, email, password).then((user) => {
       if (!user || !user.id) {
         throw new Error('Not found');
       }
