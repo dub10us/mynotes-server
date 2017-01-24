@@ -11,7 +11,7 @@
     "accessKey": {
         "keyLifetime": 60,
         "refreshKeyLifetime": 2419200,
-        "gcFrequency": 3600,
+        "gcFrequency": 3600
     },
     "database": {
         "host" : "localhost",
