@@ -5,6 +5,7 @@ const hapiCors = require('hapi-cors');
 const config = require('config');
 const dbConnection = require('app/database/connection');
 const createRoutes = require('app/routing/createRoutes');
+const accessKeyGc = require('app/accessKey/garbageCollector');
 
 // Create a server with a host and port
 const server = new Hapi.Server();
@@ -28,5 +29,8 @@ server.register({
     }
     console.log('HTTP port env:', process.env.PORT);
     console.log('Server running at:', server.info.uri);
+
+    accessKeyGc.start(db, config.accessKey.gcFrequency);
+    console.log(`Started access key gc with ${config.accessKey.gcFrequency} seconds frequency`);
   });
 });

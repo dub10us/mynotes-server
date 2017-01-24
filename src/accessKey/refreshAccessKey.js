@@ -29,7 +29,7 @@ module.exports = keyLifetime => (
       throw new Error('The refreshKey is expired');
     }
 
-    return createAccessKey(keyLifetime, 0)(expiredAccessKey.userId) // why test passes?
+    return createAccessKey(keyLifetime, 0)(expiredAccessKey.userId)
       .then((key) => {
         const newKey = Object.assign({}, key);
         newKey.refreshKeyExpiresAt = expiredAccessKey.refreshKeyExpiresAt;
