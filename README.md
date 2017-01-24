@@ -26,9 +26,9 @@ npm run db:fixtures
 ```
 
 Alternatively there is a shortcut command that performs 3 operations at once:
-1. Drop database
-2. Create empty database
-3. Populate tables with test database
+ 1. Drop database
+ 2. Create empty database
+ 3. Populate tables with test database
 
 ```
 npm run db:schema:recreate
