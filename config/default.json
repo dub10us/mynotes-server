@@ -9,8 +9,9 @@
         "origins": ["http://localhost:3000"]
     },
     "accessKey": {
-        "keyLifetime": 3600,
-        "refreshKeyLifetime": 604800
+        "keyLifetime": 60,
+        "refreshKeyLifetime": 2419200,
+        "gcFrequency": 3600,
     },
     "database": {
         "host" : "localhost",

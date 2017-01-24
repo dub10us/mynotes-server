@@ -4,6 +4,7 @@
   },
   "accessKey": {
     "keyLifetime": 60,
-    "refreshKeyLifetime": 3600
+    "refreshKeyLifetime": 3600,
+    "gcFrequency": 60,
   }
 }
