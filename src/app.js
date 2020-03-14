@@ -18,10 +18,7 @@ const db = dbConnection.connect();
 
 createRoutes(server, db);
 
-server.register({
-  register: hapiCors,
-  options: config.get('cors')
-}).then(() => {
+
   // Start the server
   server.start((err) => {
     if (err) {
@@ -33,4 +30,6 @@ server.register({
     accessKeyGc.start(db, config.accessKey.gcFrequency);
     console.log(`Started access key gc with ${config.accessKey.gcFrequency} seconds frequency`);
   });
-});
+
+
+  

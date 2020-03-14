@@ -4,7 +4,7 @@ const db = require('app/database/connection');
 /**
  * Create empty database
  * @return {Promise}
- */
+
 function createDatabase() {
   const knex = db.connect(false);
   const database = config.get('database.database');
@@ -19,7 +19,7 @@ function createDatabase() {
           throw err;
         });
 }
-
+ */
 /**
  * Create tables
  * @return {Promise}
@@ -63,6 +63,5 @@ function createTables() {
 }
 
 module.exports = {
-  createDatabase,
   createTables,
 };
